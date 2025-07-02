@@ -1,3 +1,5 @@
+// versao final Vinicius Farias a2576341
+
 //numero secreto
 function executarExemplo1() {
     //gera o numeor aleatorio
