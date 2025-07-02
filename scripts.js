@@ -1,7 +1,7 @@
 // versao final Vinicius Farias a2576341
 
 //numero secreto
-function executarExemplo1() {
+function executar1() {
     //gera o numeor aleatorio
     const numeroSecreto = Math.floor(Math.random() * 10) + 1;
     let tentativas = 0;
@@ -40,7 +40,7 @@ function executarExemplo1() {
 }
 
 //calculo de media
-function executarExemplo2() {
+function executar2() {
     alert("Bem-vindo ao Calculador de Media!\nVoce devera inserir quantos numeros voce quer somar e ai mostraremos a media.");
     
     let soma = 0;
@@ -82,7 +82,7 @@ function executarExemplo2() {
 }
 
 //Soma dos nomeros
-function executarExemplo3() {
+function executar3() {
     alert("Bem-vindo ao Somador de Numeros!\nVoce podera somar quantos numeros quiser.");
     
     let continuar = true;
