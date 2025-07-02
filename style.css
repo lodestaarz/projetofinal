@@ -1,65 +1,57 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background-color: white;
   color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding: calc(var(--espacamento) * 2);
+  padding: 2rem;
   margin: 0;
 }
 
-/* ===== TIPOGRAFIA ===== */
 h1 {
-  color: var(--azul-escuro);
-  margin-bottom: calc(var(--espacamento) * 1.5);
+  color: #003366;
+  margin-bottom: 1.5rem;
   font-size: 2rem;
   text-align: center;
 }
 
 p {
-  color: var(--cinza-texto);
-  margin-bottom: calc(var(--espacamento) * 2);
+  color: #666;
+  margin-bottom: 2rem;
   text-align: center;
   max-width: 600px;
   line-height: 1.5;
 }
 
-/* ===== CONTAINER DE BOTÕES ===== */
 .container-button {
   display: flex;
   flex-direction: column;
-  gap: var(--espacamento);
+  gap: 1rem;
   width: 100%;
   max-width: 400px;
-  margin-top: calc(var(--espacamento) * 2);
+  margin-top: 2rem;
 }
 
-/* ===== ESTILOS DE BOTÕES ===== */
 .container-button button {
   padding: 0.8rem 1.5rem;
-  background: linear-gradient(to bottom, 
-              var(--azul-gradiente-inicio), 
-              var(--azul-gradiente-fim));
+  background: linear-gradient(to bottom, #00c0ff, #009ccd);
   color: black;
   border: none;
-  border-radius: var(--borda-arredondada);
+  border-radius: 12px;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
   width: 100%;
-  box-shadow: var(--sombra-padrao);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
-/* Efeitos de interação */
 .container-button button:hover {
-  background: linear-gradient(to bottom, 
-              var(--azul-hover-inicio), 
-              var(--azul-hover-fim));
+  background: linear-gradient(to bottom, #00a6dd, #0085b3);
   transform: translateY(-2px);
-  box-shadow: var(--sombra-hover);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .container-button button:active {
@@ -67,14 +59,7 @@ p {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.container-button button {
-    max-width: 250px;
-    flex: 1 0 auto;
-  }
-
-
-/* ===== ESTADOS DE FOCO ===== */
 .container-button button:focus {
-  outline: 2px solid var(--azul-escuro);
+  outline: 2px solid #003366;
   outline-offset: 2px;
 }
