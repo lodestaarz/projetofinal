@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, sans-serif;
   background-color: white;
@@ -10,12 +11,16 @@ body {
   margin: 0;
 }
 
+/*Estilo titulo*/
+
 h1 {
   color: #003366;
   margin-bottom: 1.5rem;
   font-size: 2rem;
   text-align: center;
 }
+
+/*Estilo subtitulo*/
 
 p {
   color: #666;
@@ -24,6 +29,8 @@ p {
   max-width: 600px;
   line-height: 1.5;
 }
+
+/* Estilo dos botoes + efeitos */
 
 .container-button {
   display: flex;
