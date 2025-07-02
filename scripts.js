@@ -1,27 +1,27 @@
 
-// Exemplo 1 - Jogo dos números secretos com alert
+//numero secreto
 function executarExemplo1() {
-    // Gerar um número aleatório entre 1 e 100
-    const numeroSecreto = Math.floor(Math.random() * 100) + 1;
+    //gera o numeor aleatorio
+    const numeroSecreto = Math.floor(Math.random() * 10) + 1;
     let tentativas = 0;
     let acertou = false;
     
-    alert("Bem-vindo ao Jogo do Número Secreto!\nTente adivinhar o número entre 1 e 100.");
+    alert("Bem-vindo ao Jogo do Numero Secreto!\nTente adivinhar o numero entre 1 e 10.");
     
     while (!acertou) {
         const palpite = prompt("Digite seu palpite:");
         
-        // Verificar se o usuário cancelou
+        //condicao de cancelamento
         if (palpite === null) {
-            alert("Jogo cancelado. O número secreto era " + numeroSecreto + ".");
+            alert("Jogo cancelado. O numero secreto era " + numeroSecreto + ".");
             return;
         }
         
-        // Converter para número e validar
+        //validacao
         const numeroPalpite = parseInt(palpite);
         
         if (isNaN(numeroPalpite)) {
-            alert("Por favor, digite um número válido.");
+            alert("Por favor, digite um numero valido.");
             continue;
         }
         
@@ -38,54 +38,48 @@ function executarExemplo1() {
     }
 }
 
-// Exemplo 2 - Criar um jogo para cálculo de média
+//calculo de media
 function executarExemplo2() {
     alert("Bem-vindo ao Calculador de Média!\nVocê deverá inserir 4 notas e veremos se você foi aprovado.");
     
     let soma = 0;
-    const quantidadeNotas = 4;
+    let quantidadeNum = 0;
+    quantidadeNum = prompt("Digite quantos numeros voce quer fazer a")
     
     for (let i = 1; i <= quantidadeNotas; i++) {
-        let notaValida = false;
-        let nota;
+        let numValido = false;
+        let num;
         
-        while (!notaValida) {
-            nota = prompt("Digite a nota " + i + " (entre 0 e 10):");
+        while (!numValido) {
+            num = prompt("Digite o numero " + i + " ");
             
-            // Verificar se o usuário cancelou
-            if (nota === null) {
+            //condicao de cancelamento
+            if (num === null) {
                 alert("Operação cancelada.");
                 return;
             }
             
-            nota = parseFloat(nota);
+            num = parseFloat(num);
             
-            if (isNaN(nota) || nota < 0 || nota > 10) {
-                alert("Por favor, digite uma nota válida entre 0 e 10.");
+            if (isNaN(num) || num < 0 ) {
+                alert("Por favor, digite uma numero valido. ");
             } else {
-                notaValida = true;
-                soma += nota;
+                numValida = true;
+                soma += num;
             }
         }
     }
     
-    const media = soma / quantidadeNotas;
-    let mensagem = "Sua média é " + media.toFixed(2) + ". ";
+    const media = soma / quantidadeNum;
+    let mensagem = "A media dos numeros e " + media.toFixed(2) + ". ";
     
-    if (media >= 7) {
-        mensagem += "Parabéns, você foi aprovado!";
-    } else if (media >= 5) {
-        mensagem += "Você está de recuperação.";
-    } else {
-        mensagem += "Infelizmente você foi reprovado.";
-    }
     
     alert(mensagem);
 }
 
-// Exemplo 3 - Soma dos números
+//Soma dos nomeros
 function executarExemplo3() {
-    alert("Bem-vindo ao Somador de Números!\nVocê poderá somar quantos números quiser.");
+    alert("Bem-vindo ao Somador de Numeros!\nVoce podera somar quantos numeros quiser.");
     
     let continuar = true;
     let soma = 0;
@@ -96,9 +90,9 @@ function executarExemplo3() {
         let numero;
         
         while (!numeroValido) {
-            numero = prompt("Digite um número para somar (ou deixe em branco para encerrar):");
+            numero = prompt("Digite um numero para somar (ou deixe em branco para encerrar):");
             
-            // Se o usuário cancelou ou deixou em branco, encerra
+            // condicao de cancelamento
             if (numero === null || numero.trim() === "") {
                 continuar = false;
                 break;
@@ -107,7 +101,7 @@ function executarExemplo3() {
             numero = parseFloat(numero);
             
             if (isNaN(numero)) {
-                alert("Por favor, digite um número válido.");
+                alert("Por favor, digite um numero valido.");
             } else {
                 numeroValido = true;
                 soma += numero;
@@ -117,8 +111,8 @@ function executarExemplo3() {
     }
     
     if (quantidade > 0) {
-        alert("Você somou " + quantidade + " números.\nTotal da soma: " + soma.toFixed(2));
+        alert("Voce somou " + quantidade + " numeros.\nTotal da soma: " + soma.toFixed(2));
     } else {
-        alert("Nenhum número foi somado.");
+        alert("Nenhum numero foi somado.");
     }
 }
