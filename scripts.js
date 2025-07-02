@@ -20,7 +20,7 @@ function executarExemplo1() {
         //validacao
         const numeroPalpite = parseInt(palpite);
         
-        if (isNaN(numeroPalpite)) {
+        if (isNaN(numeroPalpite) || palpite > 10) {
             alert("Por favor, digite um numero valido.");
             continue;
         }
