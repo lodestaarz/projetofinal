@@ -1,4 +1,3 @@
-
 //numero secreto
 function executarExemplo1() {
     //gera o numeor aleatorio
@@ -20,8 +19,8 @@ function executarExemplo1() {
         //validacao
         const numeroPalpite = parseInt(palpite);
         
-        if (isNaN(numeroPalpite) || palpite > 10) {
-            alert("Por favor, digite um numero valido.");
+        if (isNaN(numeroPalpite) || numeroPalpite < 1 || numeroPalpite > 10) {
+            alert("Por favor, digite um numero valido entre 1 e 10.");
             continue;
         }
         
@@ -29,50 +28,53 @@ function executarExemplo1() {
         
         if (numeroPalpite === numeroSecreto) {
             acertou = true;
-            alert("Parabéns! Você acertou o número secreto " + numeroSecreto + " em " + tentativas + " tentativas!");
+            alert("Parabens! Voce acertou o numero secreto " + numeroSecreto + " em " + tentativas + " tentativas!");
         } else if (numeroPalpite < numeroSecreto) {
-            alert("O número secreto é maior que " + numeroPalpite + ". Tente novamente!");
+            alert("O numero secreto e maior que " + numeroPalpite + ". Tente novamente!");
         } else {
-            alert("O número secreto é menor que " + numeroPalpite + ". Tente novamente!");
+            alert("O numero secreto e menor que " + numeroPalpite + ". Tente novamente!");
         }
     }
 }
 
 //calculo de media
 function executarExemplo2() {
-    alert("Bem-vindo ao Calculador de Média!\nVocê deverá inserir 4 notas e veremos se você foi aprovado.");
+    alert("Bem-vindo ao Calculador de Media!\nVoce devera inserir quantos numeros voce quer somar e ai mostraremos a media.");
     
     let soma = 0;
-    let quantidadeNum = 0;
-    quantidadeNum = prompt("Digite quantos numeros voce quer fazer a")
+    let quantidadeNum = parseInt(prompt("Digite quantos numeros voce quer fazer a media:"));
     
-    for (let i = 1; i <= quantidadeNotas; i++) {
+    if (isNaN(quantidadeNum) || quantidadeNum <= 0) {
+        alert("Quantidade invalida. Operacao cancelada.");
+        return;
+    }
+    
+    for (let i = 1; i <= quantidadeNum; i++) {
         let numValido = false;
         let num;
         
         while (!numValido) {
-            num = prompt("Digite o numero " + i + " ");
+            num = prompt("Digite o numero " + i + ":");
             
             //condicao de cancelamento
             if (num === null) {
-                alert("Operação cancelada.");
+                alert("Operacao cancelada.");
                 return;
             }
             
             num = parseFloat(num);
             
-            if (isNaN(num) || num < 0 ) {
-                alert("Por favor, digite uma numero valido. ");
+            if (isNaN(num)) {
+                alert("Por favor, digite um numero valido.");
             } else {
-                numValida = true;
+                numValido = true;
                 soma += num;
             }
         }
     }
     
     const media = soma / quantidadeNum;
-    let mensagem = "A media dos numeros e " + media.toFixed(2) + ". ";
-    
+    let mensagem = "A media dos numeros e " + media.toFixed(2) + ".";
     
     alert(mensagem);
 }
