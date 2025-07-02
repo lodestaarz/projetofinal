@@ -1,103 +1,66 @@
-/* ===== VARIÁVEIS E ESTILOS GERAIS ===== */
-:root {
-  --azul-escuro: #003366;
-  --azul-gradiente-inicio: #00c0ff;
-  --azul-gradiente-fim: #009ccd;
-  --azul-hover-inicio: #00a6dd;
-  --azul-hover-fim: #0085b3;
-  --cinza-texto: #666;
-  --sombra-padrao: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --sombra-hover: 0 6px 8px rgba(0, 0, 0, 0.15);
-  --espacamento: 1rem;
-  --borda-arredondada: 12px;
-}
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: white;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
   color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding: calc(var(--espacamento) * 2);
-  margin: 0;
+  padding: calc(var(--spacing) * 2);
 }
 
-/* ===== TIPOGRAFIA ===== */
-h1 {
-  color: var(--azul-escuro);
-  margin-bottom: calc(var(--espacamento) * 1.5);
-  font-size: 2rem;
-  text-align: center;
+/* Estilos para o título */
+.titulo-principal {
+  color: var(--primary-color);
+  margin-bottom: calc(var(--spacing) * 1.5);
 }
 
-p {
-  color: var(--cinza-texto);
-  margin-bottom: calc(var(--espacamento) * 2);
-  text-align: center;
-  max-width: 600px;
-  line-height: 1.5;
+.texto-descricao {
+  color: var(--secondary-color);
+  margin-bottom: calc(var(--spacing) * 2);
 }
 
-/* ===== CONTAINER DE BOTÕES ===== */
+/* Container dos botões */
 .container-button {
   display: flex;
   flex-direction: column;
-  gap: var(--espacamento);
+  gap: var(--spacing);
+  margin-top: calc(var(--spacing) * 2);
   width: 100%;
   max-width: 400px;
-  margin-top: calc(var(--espacamento) * 2);
 }
 
-/* ===== ESTILOS DE BOTÕES ===== */
-.container-button button {
+/* Estilos dos botões */
+.button {
+  display: inline-block;
   padding: 0.8rem 1.5rem;
-  background: linear-gradient(to bottom, 
-              var(--azul-gradiente-inicio), 
-              var(--azul-gradiente-fim));
-  color: black;
-  border: none;
-  border-radius: var(--borda-arredondada);
+  background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+  color: #000;
+  text-decoration: none;
+  border-radius: 12px;
   font-weight: bold;
-  font-size: 1rem;
+  border: none;
   cursor: pointer;
+  font-size: 1rem;
   width: 100%;
-  box-shadow: var(--sombra-padrao);
+  margin: 0 auto;
+  box-shadow: var(--shadow);
   transition: all 0.3s ease;
 }
 
-/* Efeitos de interação */
-.container-button button:hover {
-  background: linear-gradient(to bottom, 
-              var(--azul-hover-inicio), 
-              var(--azul-hover-fim));
+/* Efeitos de hover */
+.button:hover {
+  background: linear-gradient(to bottom, var(--hover-start), var(--hover-end));
   transform: translateY(-2px);
-  box-shadow: var(--sombra-hover);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.container-button button:active {
+.button:active {
   transform: translateY(1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-/* ===== RESPONSIVIDADE ===== */
-@media (min-width: 768px) {
-  .container-button {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 800px;
-  }
-  
-  .container-button button {
+ 
+  .button {
     max-width: 250px;
-    flex: 1 0 auto;
   }
-}
-
-/* ===== ESTADOS DE FOCO ===== */
-.container-button button:focus {
-  outline: 2px solid var(--azul-escuro);
-  outline-offset: 2px;
-}
